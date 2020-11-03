@@ -2,6 +2,7 @@
 
 # License: GPL 3.0
 
+from pathlib import Path
 import setuptools
 
 import versioneer
@@ -22,7 +23,7 @@ Bayesian Rose Trees proposed by Blundell et al (2012).
 > BLUNDELL, Charles; TEH, Yee Whye; HELLER, Katherine A. Bayesian rose trees. arXiv preprint arXiv:1203.3468, 2012.
 """
 
-REQUIREMENTS = ["numpy==1.18.5", "scipy==1.5.0"]
+REQUIREMENTS = [l.strip() for l in Path('requirements.txt').read_text('utf-8').splitlines()]
 
 CLASSIFIERS = [
     "Environment :: Console",
